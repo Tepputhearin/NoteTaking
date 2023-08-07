@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "320916611914",
+    "project_id": "flutterfirenotes-d12fc",
+    "storage_bucket": "flutterfirenotes-d12fc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:320916611914:android:bf0e08a1fd92e18dc297b3",
+        "android_client_info": {
+          "package_name": "com.example.weather_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "320916611914-1qjqr21te0274jtfdlu1fbg90mllo18l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCZ_WPdeiHSqrq_6ch2QjG-bMZ0vSZWPmw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "320916611914-1qjqr21te0274jtfdlu1fbg90mllo18l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
