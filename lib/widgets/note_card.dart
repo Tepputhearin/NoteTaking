@@ -12,30 +12,47 @@ Widget noteCard(Function()? onTap, QueryDocumentSnapshot doc) {
         color: AppStyle.cardsColor[doc['color_id']],
         borderRadius: BorderRadius.circular(8.0),
       ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+      child: Stack(
         children: [
-          Text(
-            doc["note_title"],
-             style: AppStyle.mainTitle,
-             ),
-             const SizedBox(
-               height: 4.0,
-             ),
-          Text(
-            doc["creation_date"],
-           style: AppStyle.dateTitle,
-           ),
-           const SizedBox(
-               height: 8.0,
-             ),
-          Text(
-            doc["note_content"],
-           style: AppStyle.mainContent,
-           overflow: TextOverflow.ellipsis,
-           ),
-        ]
-      )
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                doc["note_title"],
+                style: AppStyle.mainTitle,
+              ),
+              const SizedBox(
+                height: 4.0,
+              ),
+              Text(
+                doc["creation_date"],
+                style: AppStyle.dateTitle,
+              ),
+              const SizedBox(
+                height: 8.0,
+              ),
+              Text(
+                doc["note_content"],
+                style: AppStyle.mainContent,
+                overflow: TextOverflow.ellipsis,
+              ),
+            ],
+          ),
+          Positioned(
+            bottom: 0.0,
+            right: 0.0,
+            child: IconButton(
+              icon: Icon(Icons.delete),
+              onPressed: () {
+                FirebaseFirestore.instance
+                    .collection("Notes")
+                    .doc(doc.id)
+                    .delete();
+              },
+            ),
+          ),
+        ],
       ),
+    ),
   );
 }
